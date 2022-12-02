@@ -8,10 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Math",
+"language": "GDScript",
+"path": "res://util/math.gd"
+} ]
+_global_script_class_icons={
+"Math": ""
+}
+
 [application]
 
 config/name="godot-3d-test"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://game/game.tscn"
 
 [gui]
 
@@ -23,4 +38,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

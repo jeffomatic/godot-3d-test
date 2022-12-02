@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://terrain/terrain_grid.gd" type="Script" id=1]
+[ext_resource path="res://terrain/terrain_tile.tscn" type="PackedScene" id=2]
+
+[node name="TerrainGrid" type="Spatial"]
+script = ExtResource( 1 )
+tile_scene = ExtResource( 2 )

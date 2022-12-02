@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game_camera/game_camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://terrain/terrain_grid.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Environment" id=3]
+
+[node name="Main" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="Lights" type="Spatial" parent="WorldEnvironment"]
+
+[node name="Key" type="DirectionalLight" parent="WorldEnvironment/Lights"]
+transform = Transform( 0.866025, -0.275459, -0.41728, 0.5, 0.477109, 0.72275, 0, -0.83456, 0.550918, 0, 15.1642, 1.4459 )
+light_color = Color( 1, 0.870588, 0.647059, 1 )
+light_energy = 0.9
+
+[node name="Fill" type="DirectionalLight" parent="WorldEnvironment/Lights"]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 8, 0, -80.554 )
+light_color = Color( 1, 0.996078, 0.807843, 1 )
+light_energy = 0.125
+
+[node name="TerrainGrid" parent="." instance=ExtResource( 2 )]
+size = 11
+
+[node name="GameCamera" parent="." instance=ExtResource( 1 )]
+initial_radius = 10.0
+initial_polar_deg = 60.0
+initial_azimuth_deg = 45.0
+target = Vector3( 0, 0.5, 0 )
